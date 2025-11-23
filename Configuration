@@ -1,0 +1,22 @@
+The script reads a config file from:
+	1.	~/.gaming-mode.conf (user override), or
+	2.	/etc/gaming-mode.conf (system-wide default)
+
+Available options
+
+# How Steam launches:
+#   bigpicture → steam -tenfoot (default)
+#   gamepadui  → steam -gamepadui
+STEAM_LAUNCH_MODE=bigpicture
+
+# Performance tweaks:
+#   enabled  → enable gamescope low-latency flags and perf tweaks
+#   disabled → run in a more conservative mode
+PERFORMANCE_MODE=enabled
+
+You can create the file manually or copy from an example:
+
+sudo cp docs/gaming-mode.conf.example /etc/gaming-mode.conf
+sudo $EDITOR /etc/gaming-mode.conf
+
+(User-specific overrides should go in ~/.gaming-mode.conf.)
