@@ -1,22 +1,19 @@
-The script reads a config file from:
-	1.	~/.gaming-mode.conf (user override), or
-	2.	/etc/gaming-mode.conf (system-wide default)
+W.O.P.R. reads an optional configuration file from:
+	•	User-level (preferred): ~/.gaming-mode.conf
+	•	System-wide: /etc/gaming-mode.conf
 
-Available options
+If neither exists, sensible defaults are used.
 
-# How Steam launches:
-#   bigpicture → steam -tenfoot (default)
-#   gamepadui  → steam -gamepadui
-STEAM_LAUNCH_MODE=bigpicture
+Example ~/.gaming-mode.conf
 
-# Performance tweaks:
-#   enabled  → enable gamescope low-latency flags and perf tweaks
-#   disabled → run in a more conservative mode
-PERFORMANCE_MODE=enabled
+# Launch mode for Steam:
+#   bigpicture (default) → Steam -tenfoot
+#   gamepadui            → Steam -gamepadui
+	STEAM_LAUNCH_MODE=bigpicture
 
-You can create the file manually or copy from an example:
+# Performance mode:
+#   enabled  → adjust CPU governor + GPU performance settings while gaming
+#   disabled → leave CPU/GPU settings alone
+	PERFORMANCE_MODE=enabled
 
-sudo cp docs/gaming-mode.conf.example /etc/gaming-mode.conf
-sudo $EDITOR /etc/gaming-mode.conf
-
-(User-specific overrides should go in ~/.gaming-mode.conf.)
+You can safely create or edit this file at any time; changes will apply the next time you start Gaming Mode.
