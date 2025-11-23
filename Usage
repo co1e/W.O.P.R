@@ -1,27 +1,56 @@
-Once installed:
-	•	Press Super + Shift + S
-	1.	You’ll see the W.O.P.R splash:
-W.O.P.R
-Shall we play a game?
-	2.	If you have saved settings it will ask:
-	•	Yes – Use previous settings
-	•	No – Configure new settings
-	3.	If configuring new settings:
-	•	Choose your render/output resolution (see Features)
-	•	Choose your MangoHud overlay preset
-	4.	The “Launching Gaming Mode” screen summarises:
-	•	Render resolution
+Enter Gaming Mode
+
+Once installed and after re-logging in if requested:
+	1.	Press SUPER+SHIFT+S.
+	2.	A themed TUI will appear.
+
+1. Previous settings prompt
+If you have launched gaming mode before, you’ll see:
+	•	“Previous settings found. Use previous settings?”
+	•	Yes – reuse saved resolution and MangoHud options
+	•	No – go through the wizards again
+
+2. Resolution selector
+You’ll be shown your current display (e.g. 3840×2160 @ 60Hz) and:
+	•	Native resolution (best quality)
+	•	1440p upscaled from 1080p (more FPS)
+	•	Native 1440p
+	•	1440p → 4K upscaled (balanced)
+	•	Native 4K/UHD
+
+These correspond to different Gamescope render/output combinations.
+
+3. MangoHud overlay
+Choose one of:
+	•	Off – no overlay
+	•	Minimal – FPS only, recommended
+	•	Full Stats – detailed CPU/GPU metrics, frametime graph, temps, etc.
+
+4. Launch screen
+A final “Launching Gaming Mode” screen summarises:
+	•	Chosen render resolution
 	•	Output resolution
 	•	Refresh rate
 	•	MangoHud preset
-Then gamescope + Steam are started.
-	•	Press Super + Shift + R
-	•	gamescope & Steam are closed
-	•	CPU governor and GPU perf modes are restored
-	•	hypridle state is restored and idle-prevention lock removed
-	•	A small WOPR exit message is shown, then you’re back to your normal desktop.
 
-You can also run the launchers directly from a terminal:
+The script then:
+	•	Exports the correct MANGOHUD_CONFIG (if enabled)
+	•	Runs gamemoderun gamescope ... -- steam <args>
+	•	Stores the Gamescope PID under ~/.cache/gaming-session/session.pid
 
-~/.local/share/steam-launcher/enter-gamesmode
-~/.local/share/steam-launcher/leave-gamesmode
+By default Steam is launched in Big Picture/tenfoot mode.
+
+Exit Gaming Mode
+
+When you’re done:
+	•	Press SUPER+SHIFT+R.
+
+This runs leave-gamesmode, which:
+	•	Finds and cleanly kills the running Gamescope session created by W.O.P.R.
+	•	Restores:
+	•	CPU governors
+	•	GPU performance / power settings (where possible)
+	•	Any idle/lock tweaks created for the session
+	•	Removes the session lock files in ~/.cache/gaming-session/.
+
+If Gamescope failed to start or exits early, the cleanup routines still run to return your system to its previous state.
