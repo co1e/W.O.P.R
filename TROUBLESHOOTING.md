@@ -47,3 +47,43 @@ Re-run `./WOPR.sh` to let it re-check dependencies if needed.
 3.	Restart Hyprland or reload config: hyprctl reload.
 
 If you use a custom binding file layout, make sure the file W.O.P.R. edited is actually included from your main Hypr config.
+
+
+Steam opens but not in Big Picture
+
+Check ~/.gaming-mode.conf:
+
+STEAM_LAUNCH_MODE=bigpicture
+
+Only two modes are currently supported:
+	•	bigpicture (default)
+	•	gamepadui
+
+
+Performance tweaks don’t seem to apply
+
+Ensure you allowed W.O.P.R. to create the performance udev rules:
+	•	Check for /etc/udev/rules.d/99-gaming-performance.rules.
+
+If you skipped this during installation:
+	1.	Re-run ./WOPR.sh.
+	2.	When prompted about passwordless performance controls, answer Y.
+	3.	Reboot or log out/in to let udev rules take effect.
+
+
+   Intel Arc GTK apps look broken
+
+If you skipped the Intel Arc workaround during install you can run ./WOPR.sh again and accept the Intel Arc GTK4 rendering fix prompt, or manually set:
+
+GSK_RENDERER=gl
+
+in an environment file under /etc/environment.d/ or ~/.config/environment.d/.
+
+
+If you hit something else, please open an issue with:
+	•	Distro + kernel
+	•	GPU model
+	•	Output of ./WOPR.sh (or at least the last 30–40 lines)
+	•	Any relevant Hypr config fragments
+
+
