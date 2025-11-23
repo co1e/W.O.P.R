@@ -1,0 +1,29 @@
+
+There isn’t a one-command uninstaller yet, but you can remove everything manually:
+
+1.	Delete launcher scripts
+
+rm -f ~/.local/share/steam-launcher/enter-gamesmode
+rm -f ~/.local/share/steam-launcher/leave-gamesmode
+rmdir ~/.local/share/steam-launcher 2>/dev/null || true
+
+	2.	Remove Hyprland bindings
+
+Edit your bindings config (~/.config/hypr/bindings.conf or similar) and delete the block between:
+
+# Gaming Mode bindings - added by installation script
+...
+# End Gaming Mode bindings
+
+3.    Remove config and state (optional)
+
+rm -f ~/.gaming-mode.conf
+rm -rf ~/.cache/gaming-session
+
+4.	Remove udev rules (optional)
+
+sudo rm -f /etc/udev/rules.d/99-gaming-performance.rules
+sudo udevadm control --reload
+
+	5.	Remove Intel Arc GTK fix (if you enabled it)
+  Delete the created environment file under /etc/environment.d/ or ~/.config/environment.d/ and log out/in.
