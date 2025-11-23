@@ -1,0 +1,27 @@
+Once installed:
+	•	Press Super + Shift + S
+	1.	You’ll see the W.O.P.R splash:
+W.O.P.R
+Shall we play a game?
+	2.	If you have saved settings it will ask:
+	•	Yes – Use previous settings
+	•	No – Configure new settings
+	3.	If configuring new settings:
+	•	Choose your render/output resolution (see Features)
+	•	Choose your MangoHud overlay preset
+	4.	The “Launching Gaming Mode” screen summarises:
+	•	Render resolution
+	•	Output resolution
+	•	Refresh rate
+	•	MangoHud preset
+Then gamescope + Steam are started.
+	•	Press Super + Shift + R
+	•	gamescope & Steam are closed
+	•	CPU governor and GPU perf modes are restored
+	•	hypridle state is restored and idle-prevention lock removed
+	•	A small WOPR exit message is shown, then you’re back to your normal desktop.
+
+You can also run the launchers directly from a terminal:
+
+~/.local/share/steam-launcher/enter-gamesmode
+~/.local/share/steam-launcher/leave-gamesmode
