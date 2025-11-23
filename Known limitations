@@ -1,0 +1,4 @@
+	•	Arch-only: the installer assumes pacman and Arch-style packaging.
+	•	Hyprland-only: it looks specifically for Hypr configs and uses hyprctl.
+	•	Multimonitor setups: Gamescope is launched against your primary output; complex multi-monitor layouts may need extra work.
+	•	Wayland focus: X11 setups are not directly supported.
