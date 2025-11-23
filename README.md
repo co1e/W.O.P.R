@@ -1,2 +1,2 @@
 # wopr
-Game launch of Omarchy OS 
+Game launcher for Omarchy OS 
