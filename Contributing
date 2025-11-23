@@ -1,5 +1,37 @@
-Issues and pull requests are very welcome:
-	•	Bug reports (with logs/terminal output)
-	•	Support for other compositors or distros (ideally behind flags)
-	•	Smarter resolution detection, HDR, VRR, etc.
-	•	Documentation improvements
+Contributing
+
+Thanks for your interest in contributing to W.O.P.R. 👋
+This repository uses a strict protected-branch workflow to ensure that code cannot change without explicit review and approval.
+
+Contribution Rules
+	•	All changes must be submitted via a pull request (PR).
+	•	The main branch is protected — no one can push to it directly.
+	•	All PRs require approval from the project maintainer before they can be merged.
+	•	At this time, the only maintainer with merge permissions is Gavin Nugent.
+	•	Contributors should fork the repository before making any changes.
+
+This ensures the project remains stable and all modifications are reviewed before entering the codebase.
+
+Ways to Help
+	•	Report bugs (screenshots or logs preferred)
+	•	Improve documentation or spelling/grammar
+	•	Suggest support for additional hardware or compositors
+	•	Propose code cleanups or refactors
+
+How to Submit a Pull Request
+	1.	Fork the repository to your own GitHub account.
+	2.	Create a feature branch in your fork.
+	3.	Make your changes in small, focused commits.
+	4.	If your change affects behaviour, update README.md or relevant docs.
+	5.	Open a pull request against the main branch of this repository.
+	6.	Wait for review. Only approved PRs will be merged.
+
+Style Guidelines
+	•	Target: POSIX-ish bash, using set -Euo pipefail
+	•	Code should be readable and defensive
+	•	Prefer explicit error messages over hidden magic
+	•	Use UK English in user-facing text
+
+Code of Conduct
+
+Be kind, respectful, and constructive. Remember there’s a human on the other side of every issue or pull request.
