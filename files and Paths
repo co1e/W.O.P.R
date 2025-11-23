@@ -1,0 +1,28 @@
+Files and Paths
+	•	Installer script
+  
+		WOPR.sh (this repo)
+    
+	•	Generated launchers
+  
+		~/.local/share/steam-launcher/enter-gamesmode
+		~/.local/share/steam-launcher/leave-gamesmode
+    
+	•	Session state
+  
+		~/.cache/gaming-session/session.pid
+		~/.cache/gaming-session/settings.conf
+    
+	•	Config
+  
+	•	~/.gaming-mode.conf (user)
+	•	/etc/gaming-mode.conf (system)
+  
+		Performance udev rules
+    
+	•	/etc/udev/rules.d/99-gaming-performance.rules
+  
+		Optional Intel Arc GTK4 fix
+    
+	•	e.g. /etc/environment.d/99-intel-arc-gtk4.conf
+or ~/.config/environment.d/99-intel-arc-gtk4.conf
