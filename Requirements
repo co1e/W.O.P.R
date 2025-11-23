@@ -1,0 +1,12 @@
+Requirements
+	•	OS: Arch Linux or Arch-based (tested on Omarchy)
+	•	WM: Hyprland￼
+	•	Package manager: pacman
+	•	Packages (the script will offer to install them):
+	•	steam, gamescope, mangohud, gamemode, gum
+	•	python, pciutils, libcap
+	•	Appropriate Vulkan and 32-bit libraries for your GPU
+	•	Multilib enabled in /etc/pacman.conf
+
+You’ll also need sudo access for installing packages and (optionally)
+setting capabilities on gamescope.
