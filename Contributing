@@ -1,0 +1,5 @@
+Issues and pull requests are very welcome:
+	•	Bug reports (with logs/terminal output)
+	•	Support for other compositors or distros (ideally behind flags)
+	•	Smarter resolution detection, HDR, VRR, etc.
+	•	Documentation improvements
