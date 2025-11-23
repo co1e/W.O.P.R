@@ -1,0 +1,19 @@
+git clone https://github.com/<your-user>/<your-repo>.git
+
+cd <your-repo>
+
+chmod +x WOPR.sh
+
+./WOPR.sh
+
+
+
+The installer will:
+	1.	Check your environment
+	2.	Offer a system upgrade (recommended)
+	3.	Install missing packages
+	4.	Deploy enter-gamesmode / leave-gamesmode
+	5.	Add Hyprland keybinds and window rules
+
+At the end it will tell you if you need to log out and back in
+(e.g. because your user was added to new groups).
