@@ -40,3 +40,10 @@ Re-run `./WOPR.sh` to let it re-check dependencies if needed.
    # Gaming Mode bindings - added by installation script
    ...
    # End Gaming Mode bindings
+
+
+
+
+3.	Restart Hyprland or reload config: hyprctl reload.
+
+If you use a custom binding file layout, make sure the file W.O.P.R. edited is actually included from your main Hypr config.
