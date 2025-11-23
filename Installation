@@ -1,19 +1,63 @@
-git clone https://github.com/<your-user>/<your-repo>.git
-
-cd <your-repo>
+git clone https://github.com/YOUR-USER/WOPR-gaming-mode.git
+cd WOPR-gaming-mode
 
 chmod +x WOPR.sh
-
 ./WOPR.sh
 
 
+	During the first run the installer will:
 
-The installer will:
-	1.	Check your environment
-	2.	Offer a system upgrade (recommended)
-	3.	Install missing packages
-	4.	Deploy enter-gamesmode / leave-gamesmode
-	5.	Add Hyprland keybinds and window rules
+1.	Validate environment
 
-At the end it will tell you if you need to log out and back in
-(e.g. because your user was added to new groups).
+	•	Verifies pacman, hyprctl and a Hypr config are present.
+
+2.	Refresh and optionally upgrade the system
+
+	•	Runs pacman -Syy
+	•	Optionally runs pacman -Syu (you can skip, but may hit dependency issues later).
+
+3.	Check and install dependencies
+
+	•	Steam and its 32-bit libraries
+	•	Gamescope
+	•	MangoHud
+	•	GameMode
+	•	gum
+	•	GPU-specific Vulkan drivers and supporting libs
+
+4.	Ensure multilib is enabled
+
+	•	Warns you and offers to add [multilib] to /etc/pacman.conf if needed.
+
+5.	Set up performance permissions (optional)
+
+	•	Creates /etc/udev/rules.d/99-gaming-performance.rules
+	•	Allows your user to change CPU governors and certain GPU performance knobs without typing your password each time.
+
+6.	Create launcher scripts
+
+	•	~/.local/share/steam-launcher/enter-gamesmode
+	•	~/.local/share/steam-launcher/leave-gamesmode
+
+7.	Add Hyprland bindings and window rules
+
+	•	Appends a block to your bindings config:
+
+# Gaming Mode bindings - added by installation script
+windowrulev2 = float, class:(YOUR_TERMINAL_CLASS)
+windowrulev2 = size 800 600, class:(YOUR_TERMINAL_CLASS)
+windowrulev2 = center, class:(YOUR_TERMINAL_CLASS)
+windowrulev2 = pin, class:(YOUR_TERMINAL_CLASS)
+
+# bindd style if you use bindd:
+bindd = SUPER SHIFT, S, Steam Gaming Mode, exec, YOUR_TERMINAL_CMD ~/.local/share/steam-launcher/enter-gamesmode
+bindd = SUPER SHIFT, R, Exit Gaming Mode, exec, ~/.local/share/steam-launcher/leave-gamesmode
+
+# or plain bind = ... if your config uses that
+# End Gaming Mode bindings
+
+8.	Intel Arc option (if applicable)
+
+	•	If an Intel Arc GPU is detected, offers to add a GTK4 environment file under /etc/environment.d/ or ~/.config/environment.d/ that forces GSK_RENDERER=gl.
+
+If you are asked to log out / reboot (e.g. after udev or environment changes), do that once the script finishes.
