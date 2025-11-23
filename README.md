@@ -148,9 +148,11 @@ The installer script (`WOPR.sh`):
    (It auto-detects whether your config uses bind or bindd.)
 
 
-	6.	Validation
+	
    
-A final check confirms:
+6.	Validation
+
+	A final check confirms:
 	•	Launcher scripts exist and are executable
 	•	The bindings block is present in your Hypr config
 	•	gamescope capabilities are compatible with PERFORMANCE_MODE
