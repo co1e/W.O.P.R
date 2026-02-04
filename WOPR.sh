@@ -225,8 +225,8 @@ check_steam_dependencies() {
       "lib32-vulkan-radeon"       # 32-bit AMD Vulkan driver
       "libva-mesa-driver"         # VA-API support for AMD
       "lib32-libva-mesa-driver"   # 32-bit VA-API
-      "mesa-vdpau"                # VDPAU support
-      "lib32-mesa-vdpau"          # 32-bit VDPAU
+      # "mesa-vdpau"                # VDPAU support
+      # "lib32-mesa-vdpau"          # 32-bit VDPAU
     )
     # Optional AMD-specific packages (only if not installed)
     ! check_package "xf86-video-amdgpu" && optional_deps+=("xf86-video-amdgpu")
